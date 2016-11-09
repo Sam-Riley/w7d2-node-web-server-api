@@ -11,7 +11,7 @@ router.get('/users', function (req, res) {
   db.serialize(function () {
       db.all('SELECT * FROM users', (errors, rows) => {
         if (req.query.format === 'html') {
-          res.render('users.html' {
+          res.render('users.html', {
             users: rows
           })
         }
@@ -27,7 +27,7 @@ router.get('/addresses', function (req, res) {
   db.serialize(function () {
       db.all('SELECT * FROM addresses', (errors, rows) => {
         if (req.query.format === 'html') {
-          res.render('addresses.html' {
+          res.render('addresses.html', {
             addresses: rows
           })
         }
@@ -43,7 +43,7 @@ router.get('/items', function (req, res) {
   db.serialize(function () {
       db.all('SELECT * FROM items', (errors, rows) => {
         if (req.query.format === 'html') {
-          res.render('items.html' {
+          res.render('items.html', {
             items: rows
           })
         }
@@ -59,7 +59,7 @@ router.get('/orders', function (req, res) {
   db.serialize(function () {
       db.all('SELECT * FROM orders', (errors, rows) => {
         if (req.query.format === 'html') {
-          res.render('orders.html' {
+          res.render('orders.html', {
             orders: rows
           })
         }
